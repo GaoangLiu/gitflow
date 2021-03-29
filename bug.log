@@ -1,0 +1,226 @@
+[2021-03-25 15:25:31,160] [INFO] [pkgs.handp.general_rule:opinion_extract] general_rule_result：[]
+[2021-03-25 15:25:31,331] [ERROR] [pkgs.event_recall.model:exception] NERTrigger Handler Error, 
+Stack (most recent call last):
+  File "/data/anaconda3/envs/serving/lib/python3.8/threading.py", line 890, in _bootstrap
+    self._bootstrap_inner()
+  File "/data/anaconda3/envs/serving/lib/python3.8/threading.py", line 932, in _bootstrap_inner
+    self.run()
+  File "/data/anaconda3/envs/serving/lib/python3.8/threading.py", line 870, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/developer/serving/app/controllers/api/tracker.py", line 118, in _redo
+    res = list(map(_process, data["task_list"]))
+  File "/home/developer/serving/app/controllers/api/tracker.py", line 101, in _process
+    futures["all_event"] = exec.submit(_all_event, talk, rule_next)
+  File "/data/anaconda3/envs/serving/lib/python3.8/concurrent/futures/process.py", line 645, in submit
+    self._start_queue_management_thread()
+  File "/data/anaconda3/envs/serving/lib/python3.8/concurrent/futures/process.py", line 584, in _start_queue_management_thread
+    self._adjust_process_count()
+  File "/data/anaconda3/envs/serving/lib/python3.8/concurrent/futures/process.py", line 608, in _adjust_process_count
+    p.start()
+  File "/data/anaconda3/envs/serving/lib/python3.8/multiprocessing/process.py", line 121, in start
+    self._popen = self._Popen(self)
+  File "/data/anaconda3/envs/serving/lib/python3.8/multiprocessing/context.py", line 277, in _Popen
+    return Popen(process_obj)
+  File "/data/anaconda3/envs/serving/lib/python3.8/multiprocessing/popen_fork.py", line 19, in __init__
+    self._launch(process_obj)
+  File "/data/anaconda3/envs/serving/lib/python3.8/multiprocessing/popen_fork.py", line 75, in _launch
+    code = process_obj._bootstrap(parent_sentinel=child_r)
+  File "/data/anaconda3/envs/serving/lib/python3.8/multiprocessing/process.py", line 315, in _bootstrap
+    self.run()
+  File "/data/anaconda3/envs/serving/lib/python3.8/multiprocessing/process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+  File "/data/anaconda3/envs/serving/lib/python3.8/concurrent/futures/process.py", line 239, in _process_worker
+    r = call_item.fn(*call_item.args, **call_item.kwargs)
+  File "/home/developer/serving/app/controllers/api/tracker.py", line 145, in _event_find
+    res = event_find_for_backend(dialogue_doc, basic_tracker)
+  File "/home/developer/serving/app/pkgs/event_recall/event_find.py", line 94, in event_find_for_backend
+    backend_pipeline.trigger_process()
+  File "/home/developer/serving/app/pkgs/event_recall/model.py", line 261, in trigger_process
+    EventRecallContext.invoke_trigger(self.head, self.request)
+  File "/home/developer/serving/app/pkgs/event_recall/model.py", line 176, in invoke_trigger
+    ctx.handler.trigger_(ctx, request)
+  File "/home/developer/serving/app/pkgs/event_recall/model.py", line 128, in trigger_
+    ctx.trigger(request)
+  File "/home/developer/serving/app/pkgs/event_recall/model.py", line 181, in trigger
+    self.invoke_trigger(self.next, request)
+  File "/home/developer/serving/app/pkgs/event_recall/model.py", line 176, in invoke_trigger
+    ctx.handler.trigger_(ctx, request)
+  File "/home/developer/serving/app/pkgs/event_recall/model.py", line 128, in trigger_
+    ctx.trigger(request)
+  File "/home/developer/serving/app/pkgs/event_recall/model.py", line 181, in trigger
+    self.invoke_trigger(self.next, request)
+  File "/home/developer/serving/app/pkgs/event_recall/model.py", line 176, in invoke_trigger
+    ctx.handler.trigger_(ctx, request)
+  File "/home/developer/serving/app/pkgs/event_recall/model.py", line 128, in trigger_
+    ctx.trigger(request)
+  File "/home/developer/serving/app/pkgs/event_recall/model.py", line 181, in trigger
+    self.invoke_trigger(self.next, request)
+  File "/home/developer/serving/app/pkgs/event_recall/model.py", line 178, in invoke_trigger
+    ctx.handler.exception_(ctx, request, e)
+  File "/home/developer/serving/app/pkgs/event_recall/model.py", line 148, in exception_
+    self.exception(request, a)
+  File "/home/developer/serving/app/pkgs/event_recall/model.py", line 159, in exception
+    clog.error('{0} Handler Error, {1}'.format(self.name, str(a)))
+[2021-03-25 15:25:31,334] [ERROR] [pkgs.event_recall.model:exception] AdvancedMatchSegmentationFilter Handler Error, cannot unpack non-iterable int object
+Stack (most recent call last):
+  File "/data/anaconda3/envs/serving/lib/python3.8/threading.py", line 890, in _bootstrap
+    self._bootstrap_inner()
+  File "/data/anaconda3/envs/serving/lib/python3.8/threading.py", line 932, in _bootstrap_inner
+    self.run()
+  File "/data/anaconda3/envs/serving/lib/python3.8/threading.py", line 870, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/developer/serving/app/controllers/api/tracker.py", line 118, in _redo
+    res = list(map(_process, data["task_list"]))
+  File "/home/developer/serving/app/controllers/api/tracker.py", line 101, in _process
+    futures["all_event"] = exec.submit(_all_event, talk, rule_next)
+  File "/data/anaconda3/envs/serving/lib/python3.8/concurrent/futures/process.py", line 645, in submit
+    self._start_queue_management_thread()
+  File "/data/anaconda3/envs/serving/lib/python3.8/concurrent/futures/process.py", line 584, in _start_queue_management_thread
+    self._adjust_process_count()
+  File "/data/anaconda3/envs/serving/lib/python3.8/concurrent/futures/process.py", line 608, in _adjust_process_count
+    p.start()
+  File "/data/anaconda3/envs/serving/lib/python3.8/multiprocessing/process.py", line 121, in start
+    self._popen = self._Popen(self)
+  File "/data/anaconda3/envs/serving/lib/python3.8/multiprocessing/context.py", line 277, in _Popen
+    return Popen(process_obj)
+  File "/data/anaconda3/envs/serving/lib/python3.8/multiprocessing/popen_fork.py", line 19, in __init__
+    self._launch(process_obj)
+  File "/data/anaconda3/envs/serving/lib/python3.8/multiprocessing/popen_fork.py", line 75, in _launch
+    code = process_obj._bootstrap(parent_sentinel=child_r)
+  File "/data/anaconda3/envs/serving/lib/python3.8/multiprocessing/process.py", line 315, in _bootstrap
+    self.run()
+  File "/data/anaconda3/envs/serving/lib/python3.8/multiprocessing/process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+  File "/data/anaconda3/envs/serving/lib/python3.8/concurrent/futures/process.py", line 239, in _process_worker
+    r = call_item.fn(*call_item.args, **call_item.kwargs)
+  File "/home/developer/serving/app/controllers/api/tracker.py", line 145, in _event_find
+    res = event_find_for_backend(dialogue_doc, basic_tracker)
+  File "/home/developer/serving/app/pkgs/event_recall/event_find.py", line 95, in event_find_for_backend
+    backend_pipeline.filter_process()
+  File "/home/developer/serving/app/pkgs/event_recall/model.py", line 264, in filter_process
+    EventRecallContext.invoke_filter(self.head, self.request)
+  File "/home/developer/serving/app/pkgs/event_recall/model.py", line 187, in invoke_filter
+    ctx.handler.filter_(ctx, request)
+  File "/home/developer/serving/app/pkgs/event_recall/model.py", line 135, in filter_
+    ctx.filtter(request)
+  File "/home/developer/serving/app/pkgs/event_recall/model.py", line 192, in filtter
+    self.invoke_filter(self.next, request)
+  File "/home/developer/serving/app/pkgs/event_recall/model.py", line 187, in invoke_filter
+    ctx.handler.filter_(ctx, request)
+  File "/home/developer/serving/app/pkgs/event_recall/model.py", line 135, in filter_
+    ctx.filtter(request)
+  File "/home/developer/serving/app/pkgs/event_recall/model.py", line 192, in filtter
+    self.invoke_filter(self.next, request)
+  File "/home/developer/serving/app/pkgs/event_recall/model.py", line 187, in invoke_filter
+    ctx.handler.filter_(ctx, request)
+  File "/home/developer/serving/app/pkgs/event_recall/model.py", line 135, in filter_
+    ctx.filtter(request)
+  File "/home/developer/serving/app/pkgs/event_recall/model.py", line 192, in filtter
+    self.invoke_filter(self.next, request)
+  File "/home/developer/serving/app/pkgs/event_recall/model.py", line 187, in invoke_filter
+    ctx.handler.filter_(ctx, request)
+  File "/home/developer/serving/app/pkgs/event_recall/model.py", line 135, in filter_
+    ctx.filtter(request)
+  File "/home/developer/serving/app/pkgs/event_recall/model.py", line 192, in filtter
+    self.invoke_filter(self.next, request)
+  File "/home/developer/serving/app/pkgs/event_recall/model.py", line 187, in invoke_filter
+    ctx.handler.filter_(ctx, request)
+  File "/home/developer/serving/app/pkgs/event_recall/model.py", line 135, in filter_
+    ctx.filtter(request)
+  File "/home/developer/serving/app/pkgs/event_recall/model.py", line 192, in filtter
+    self.invoke_filter(self.next, request)
+  File "/home/developer/serving/app/pkgs/event_recall/model.py", line 189, in invoke_filter
+    ctx.handler.exception_(ctx, request, e)
+  File "/home/developer/serving/app/pkgs/event_recall/model.py", line 148, in exception_
+    self.exception(request, a)
+  File "/home/developer/serving/app/pkgs/event_recall/model.py", line 159, in exception
+    clog.error('{0} Handler Error, {1}'.format(self.name, str(a)))
+[2021-03-25 15:25:31,336] [INFO] [pkgs.handp.opinions_extract:special_opinion_extract] special_opinion_extract_input_keywords=========>[1]
+[2021-03-25 15:25:31,336] [INFO] [pkgs.handp.opinions_extract:special_opinion_extract] special_opinion_extract_input_sentence=========>好。那边。好，凯西同学你好。嗯，我是身为置信的产品经理，然后我们公司目前需要招聘产品实习生，做一个从零到一的一个开始。是做比较基础的一些工作。然后我们现在开始吧。
+[2021-03-25 15:25:31,337] [ERROR] [pkgs.event_recall.model:exception] OpinionExtractTracker Handler Error, 'in <string>' requires string as left operand, not int
+Stack (most recent call last):
+  File "/data/anaconda3/envs/serving/lib/python3.8/threading.py", line 890, in _bootstrap
+    self._bootstrap_inner()
+  File "/data/anaconda3/envs/serving/lib/python3.8/threading.py", line 932, in _bootstrap_inner
+    self.run()
+  File "/data/anaconda3/envs/serving/lib/python3.8/threading.py", line 870, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/developer/serving/app/controllers/api/tracker.py", line 118, in _redo
+    res = list(map(_process, data["task_list"]))
+  File "/home/developer/serving/app/controllers/api/tracker.py", line 101, in _process
+    futures["all_event"] = exec.submit(_all_event, talk, rule_next)
+  File "/data/anaconda3/envs/serving/lib/python3.8/concurrent/futures/process.py", line 645, in submit
+    self._start_queue_management_thread()
+  File "/data/anaconda3/envs/serving/lib/python3.8/concurrent/futures/process.py", line 584, in _start_queue_management_thread
+    self._adjust_process_count()
+  File "/data/anaconda3/envs/serving/lib/python3.8/concurrent/futures/process.py", line 608, in _adjust_process_count
+    p.start()
+  File "/data/anaconda3/envs/serving/lib/python3.8/multiprocessing/process.py", line 121, in start
+    self._popen = self._Popen(self)
+  File "/data/anaconda3/envs/serving/lib/python3.8/multiprocessing/context.py", line 277, in _Popen
+    return Popen(process_obj)
+  File "/data/anaconda3/envs/serving/lib/python3.8/multiprocessing/popen_fork.py", line 19, in __init__
+    self._launch(process_obj)
+  File "/data/anaconda3/envs/serving/lib/python3.8/multiprocessing/popen_fork.py", line 75, in _launch
+    code = process_obj._bootstrap(parent_sentinel=child_r)
+  File "/data/anaconda3/envs/serving/lib/python3.8/multiprocessing/process.py", line 315, in _bootstrap
+    self.run()
+  File "/data/anaconda3/envs/serving/lib/python3.8/multiprocessing/process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+  File "/data/anaconda3/envs/serving/lib/python3.8/concurrent/futures/process.py", line 239, in _process_worker
+    r = call_item.fn(*call_item.args, **call_item.kwargs)
+  File "/home/developer/serving/app/controllers/api/tracker.py", line 145, in _event_find
+    res = event_find_for_backend(dialogue_doc, basic_tracker)
+  File "/home/developer/serving/app/pkgs/event_recall/event_find.py", line 96, in event_find_for_backend
+    backend_pipeline.tracker_process()
+  File "/home/developer/serving/app/pkgs/event_recall/model.py", line 267, in tracker_process
+    EventRecallContext.invoke_tracker(self.head, self.request)
+  File "/home/developer/serving/app/pkgs/event_recall/model.py", line 198, in invoke_tracker
+    ctx.handler.tracker_(ctx, request)
+  File "/home/developer/serving/app/pkgs/event_recall/model.py", line 142, in tracker_
+    ctx.tracker(request)
+  File "/home/developer/serving/app/pkgs/event_recall/model.py", line 203, in tracker
+    self.invoke_tracker(self.next, request)
+  File "/home/developer/serving/app/pkgs/event_recall/model.py", line 198, in invoke_tracker
+    ctx.handler.tracker_(ctx, request)
+  File "/home/developer/serving/app/pkgs/event_recall/model.py", line 142, in tracker_
+    ctx.tracker(request)
+  File "/home/developer/serving/app/pkgs/event_recall/model.py", line 203, in tracker
+    self.invoke_tracker(self.next, request)
+  File "/home/developer/serving/app/pkgs/event_recall/model.py", line 198, in invoke_tracker
+    ctx.handler.tracker_(ctx, request)
+  File "/home/developer/serving/app/pkgs/event_recall/model.py", line 142, in tracker_
+    ctx.tracker(request)
+  File "/home/developer/serving/app/pkgs/event_recall/model.py", line 203, in tracker
+    self.invoke_tracker(self.next, request)
+  File "/home/developer/serving/app/pkgs/event_recall/model.py", line 198, in invoke_tracker
+    ctx.handler.tracker_(ctx, request)
+  File "/home/developer/serving/app/pkgs/event_recall/model.py", line 142, in tracker_
+    ctx.tracker(request)
+  File "/home/developer/serving/app/pkgs/event_recall/model.py", line 203, in tracker
+    self.invoke_tracker(self.next, request)
+  File "/home/developer/serving/app/pkgs/event_recall/model.py", line 198, in invoke_tracker
+    ctx.handler.tracker_(ctx, request)
+  File "/home/developer/serving/app/pkgs/event_recall/model.py", line 142, in tracker_
+    ctx.tracker(request)
+  File "/home/developer/serving/app/pkgs/event_recall/model.py", line 203, in tracker
+    self.invoke_tracker(self.next, request)
+  File "/home/developer/serving/app/pkgs/event_recall/model.py", line 198, in invoke_tracker
+    ctx.handler.tracker_(ctx, request)
+  File "/home/developer/serving/app/pkgs/event_recall/model.py", line 142, in tracker_
+    ctx.tracker(request)
+  File "/home/developer/serving/app/pkgs/event_recall/model.py", line 203, in tracker
+    self.invoke_tracker(self.next, request)
+  File "/home/developer/serving/app/pkgs/event_recall/model.py", line 198, in invoke_tracker
+    ctx.handler.tracker_(ctx, request)
+  File "/home/developer/serving/app/pkgs/event_recall/model.py", line 142, in tracker_
+    ctx.tracker(request)
+  File "/home/developer/serving/app/pkgs/event_recall/model.py", line 203, in tracker
+    self.invoke_tracker(self.next, request)
+  File "/home/developer/serving/app/pkgs/event_recall/model.py", line 200, in invoke_tracker
+    ctx.handler.exception_(ctx, request, e)
+  File "/home/developer/serving/app/pkgs/event_recall/model.py", line 148, in exception_
+    self.exception(request, a)
+  File "/home/developer/serving/app/pkgs/event_recall/model.py", line 159, in exception
+    clog.error('{0} Handler Error, {1}'.format(self.name, str(a)))
+[2021-03-25 15:25:31,607] [INFO] [pkgs.handp.general_rule:opinion_extract] load_rules：[{'rules': [['NN', 'nsubj', 'VA'], ['AD', 'neg', 'VA', 2]], 'apply_to': 'all', 'topic_name': '主谓关系'}, {'rules': [['VV', 'nsubj', 'VA'], ['AD', 'advmod', 'VA', 2]], 'apply_to': 'all', 'topic_name': '主谓关系'}, {'rules': [['NN', 'nsubj', 'VV'], ['AD', 'advmod', 'VV', 2]], 'apply_to': 'all', 'topic_name': '主谓关系'}, {'rules': [['NN', 'nsubj', 'VA'], ['AD', 'advmod', 'VA', 2]], 'apply_to': 'all', 'topic_name': '主谓关系'}, {'rules': [['PN', 'nsubj', 'VV', 'dep', 'VE', 'dobj', 'nn']], 'apply_to': 'all', 'topic_name': '主谓关系'}, {'rules': [['PN', 'nsubj', 'V
